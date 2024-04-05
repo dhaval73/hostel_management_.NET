@@ -1,0 +1,129 @@
+﻿@model ContactModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_Layout";
+}
+
+
+
+<div class="flex-grow  ">
+    <div class=" container md:px-44">
+        <main class="flex flex-col items-center px-11 py-12 bg-zinc-50 max-md:px-5">
+            <header>
+                <h1 class="mt-7 text-4xl font-bold text-black whitespace-nowrap">Contact Us</h1>
+            </header>
+            <p class="mt-14 text-lg font-medium text-center text-neutral-500 max-md:mt-10 max-md:max-w-full">
+                Any
+                question or remarks? Just write us a message!
+            </p>
+            <section class="self-stretch px-3.5 py-2.5 mt-8 shadow-2xl bg-zinc-300 rounded-[50px_0px] max-md:max-w-full">
+                <article class="flex  max-md:flex-col max-md:gap-0 rounded-[50px_0px] overflow-hidden ">
+                    <div class="flex flex-col w-[43%] max-md:ml-0 max-md:w-full">
+                        <div class=" relative flex flex-col grow px-10 py-12 w-full text-base bg-zinc-800 text-zinc-300 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+                            <div class=" absolute bottom-24 right-20 h-28 w-28 rounded-full bg-[#484848]/30"></div>
+                            <h2 class="text-3xl font-semibold">Contact Information</h2>
+                            <p class="mt-6 text-lg text-stone-300">Say something to start a live chat!</p>
+                            <div class="mt-20">
+                                <div class="flex gap-3 justify-between self-start mt-3  max-md:mt-10">
+                                    <img loading="lazy"
+                                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/f16c068778c5a191dedc4ba1be13fd7f5e9ac9ed99313fe6c60ce18309162c3d?apiKey=1c15e4263ea04cadbb20c639335d52ba&amp;"
+                                         alt="Phone Icon" class="w-6 aspect-square">
+                                    <div class="flex-auto my-auto">+1012 3456 789</div>
+                                </div>
+                                <div class="flex gap-3 justify-between self-start mt-3  max-md:mt-10">
+                                    <img loading="lazy"
+                                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/7bb1a00599dfe74e727d473bbea3f82a4256d12f46e2e2e0d646224abcead9f2?apiKey=1c15e4263ea04cadbb20c639335d52ba&amp;"
+                                         alt="Email Icon" class="w-6 aspect-square">
+                                    <div class="flex-auto my-auto">demo@gmail.com</div>
+                                </div>
+                                <div class="flex gap-3 justify-between self-start mt-3  max-md:mt-10">
+                                    <img loading="lazy"
+                                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/0023f0b174d7beaa6019ec381ca967db191e64dd7460b10dc4d5a7264453c043?apiKey=1c15e4263ea04cadbb20c639335d52ba&amp;"
+                                         alt="Location Icon" class="w-6 aspect-square">
+                                    <div class="flex-auto my-auto">
+                                        132 Dartmouth Street Boston, Massachusetts 02156
+                                        United States
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col pl-5 w-[57%] max-md:ml-0 max-md:w-full">
+                        <form method="post" class="container flex flex-col h-full py-14 ">
+                            <div class=" grid gap-x-10 grid-cols-2  w-full  ">
+                                <div class="mb-4 min-w-[200px] w-full">
+                                    <label for="" class="flex justify-between text-gray-700 text-sm font-semibold  ps-2">
+                                        <span>
+                                            First name
+                                        </span>
+                                    </label>
+                                    <input asp-for="FirstName" type="text" id="" class="form-input w-full px-4 py-1 border rounded-br-xl rounded-tl-xl border-gray-300 border-l-2 border-t-2   text-gray-700 text-lg focus:ring-blue-500  undefined false" placeholder="Dhaval Dharaviya">
+                                    <span asp-validation-for="FirstName" class="text-red-900"></span>
+                                </div>
+                                <div class="mb-4 min-w-[200px] w-full">
+                                    <label class="flex justify-between text-gray-700 text-sm font-semibold  ps-2">
+                                        <span>
+                                            Last name
+                                        </span>
+                                    </label>
+                                    <input asp-for="LastName" type="text" id="" class="form-input w-full px-4 py-1 border rounded-br-xl rounded-tl-xl border-gray-300 border-l-2 border-t-2   text-gray-700 text-lg focus:ring-blue-500  undefined false" placeholder="Dhaval Dharaviya">
+                                    <span asp-validation-for="LastName" class="text-red-900"></span>
+                                </div>
+                                <div class="mb-4 min-w-[200px] w-full">
+                                    <label for="" class="flex justify-between text-gray-700 text-sm font-semibold  ps-2">
+                                        <span>
+                                            Email
+                                        </span>
+                                    </label>
+                                    <input asp-for="Email" type="email" id="" class="form-input w-full px-4 py-1 border rounded-br-xl rounded-tl-xl border-gray-300 border-l-2 border-t-2   text-gray-700 text-lg focus:ring-blue-500  undefined false" placeholder="Dhaval Dharaviya">
+                                    <span asp-validation-for="Email" class="text-red-900"></span>
+                                </div>
+                                <div class="mb-4 min-w-[200px] w-full">
+                                    <label for="" class="flex justify-between text-gray-700 text-sm font-semibold  ps-2">
+                                        <span>
+                                            Mobile no
+                                        </span>
+                                    </label>
+                                    <input asp-for="MobileNo" type="number" id="" class="form-input w-full px-4 py-1 border rounded-br-xl rounded-tl-xl border-gray-300 border-l-2 border-t-2   text-gray-700 text-lg focus:ring-blue-500  undefined [-moz-appearance:_textfield] [&amp;::-webkit-inner-spin-button]:m-0 [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:m-0 [&amp;::-webkit-outer-spin-button]:appearance-none" placeholder="Dhaval Dharaviya">
+                                    <span asp-validation-for="MobileNo" class="text-red-900"></span>
+                                </div>
+                            </div>
+                            <div class="flex flex-row gap-5 w-full">
+                                <div>
+                                    <input asp-for="InquiryType" value="General" id="inquiryTypeGeneral" name="InquiryType" class="accent-gray-700" type="radio" checked>
+                                    <label for="inquiryTypeGeneral" class="pl-1">General Inquiry</label>
+                                </div>
+                                <div>
+                                    <input asp-for="InquiryType" value="Hostel" id="inquiryTypeHostel" name="InquiryType" class="accent-gray-700" type="radio">
+                                    <label for="inquiryTypeHostel" class="pl-1">Hostel Inquiry</label>
+                                </div>
+                                <div>
+                                    <input asp-for="InquiryType" value="Mess" id="inquiryTypeMess" name="InquiryType" class="accent-gray-700" type="radio">
+                                    <label for="inquiryTypeMess" class="pl-1">Mess Inquiry</label>
+                                </div>
+                            </div>
+                            <span asp-validation-for="InquiryType" class="text-red-900"></span>
+
+                            <div class="">
+                                <div class="mb-4 min-w-[200px] w-full">
+                                    <label for="" class="flex justify-between text-gray-700 text-sm font-semibold  ps-2">
+                                        <span>
+                                            Message
+                                        </span>
+                                    </label>
+                                    <textarea asp-for="Message" class="form-input resize-none w-full px-4 py-1 border rounded-br-2xl rounded-tl-2xl border-gray-300 border-l-2 border-t-2   text-gray-700 text-lg focus:ring-blue-500  undefined " placeholder="i want to inform"></textarea>
+                                    <span asp-validation-for="Message" class="text-red-900"></span>
+                                </div>
+                            </div>
+                            <div class="flex justify-end ">
+                                <button type="submit" class="bg-zinc-800 hover:bg-zink-700 focus:ring-zinc-600  text-white px-4 py-1 mx-1 rounded-tl-xl rounded-br-lg focus:ring-2 focus:ring-opacity-100 w-fit ">
+                                    Button
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+</div>

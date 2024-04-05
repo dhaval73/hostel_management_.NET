@@ -1,0 +1,101 @@
+﻿@model hostel_management.Models.StudentModel
+@{
+    ViewData["Title"] = "Edit Student";
+    Layout = "_Layout_admin";
+}
+
+<div class="container flex justify-center my-14">
+    <div class="bg-zinc-300 self-stretch shadow-2xl max-w-[600px] flex flex-col items-center justify-center p-5 px-14 rounded-[50px_0px]">
+        <h1 class="font-bold text-3xl mt-3">Edit Student</h1>
+        <form asp-action="EditStudent" asp-controller="Admin" method="post" class="mt-5 flex flex-col items-center justify-center">
+            <div class="validation-summary-errors" asp-validation-summary="All"></div> <!-- Include validation summary -->
+
+            <input asp-for="StudentId" class="hidden" value="@Model.StudentId" />
+
+
+            <div class="grid grid-cols-2 gap-x-10 max-sm:grid-cols-1 row-span-4">
+                <div class="mb-4 min-w-[200px] w-full">
+                    <label asp-for="FirstName" class="flex justify-between text-gray-700 text-sm font-semibold ps-2">
+                        <span>First Name</span>
+                    </label>
+                    <input asp-for="FirstName" class="form-input w-full px-4 py-1 border rounded-br-xl rounded-tl-xl border-gray-300 border-l-2 border-t-2 text-gray-700 text-lg focus:ring-blue-500" value="@Model.FirstName" />
+                    <span asp-validation-for="FirstName" class="text-red-500"></span>
+                </div>
+                <div class="mb-4 min-w-[200px] w-full">
+                    <label asp-for="LastName" class="flex justify-between text-gray-700 text-sm font-semibold ps-2">
+                        <span>Last Name</span>
+                    </label>
+                    <input asp-for="LastName" class="form-input w-full px-4 py-1 border rounded-br-xl rounded-tl-xl border-gray-300 border-l-2 border-t-2 text-gray-700 text-lg focus:ring-blue-500" value="@Model.LastName" />
+                    <span asp-validation-for="LastName" class="text-red-500"></span>
+                </div>
+                <div class="mb-4 min-w-[200px] w-full">
+                    <label asp-for="EnrollmentNumber" class="flex justify-between text-gray-700 text-sm font-semibold ps-2">
+                        <span>Enrollment No</span>
+                    </label>
+                    <input asp-for="EnrollmentNumber" class="form-input w-full px-4 py-1 border rounded-br-xl rounded-tl-xl border-gray-300 border-l-2 border-t-2 text-gray-700 text-lg focus:ring-blue-500" value="@Model.EnrollmentNumber" />
+                    <span asp-validation-for="EnrollmentNumber" class="text-red-500"></span>
+                </div>
+                <div class="mb-4 min-w-[200px] w-full">
+                    <label asp-for="MobileNumber" class="flex justify-between text-gray-700 text-sm font-semibold ps-2">
+                        <span>Mobile No</span>
+                    </label>
+                    <input asp-for="MobileNumber" class="form-input w-full px-4 py-1 border rounded-br-xl rounded-tl-xl border-gray-300 border-l-2 border-t-2 text-gray-700 text-lg focus:ring-blue-500" value="@Model.MobileNumber" />
+                    <span asp-validation-for="MobileNumber" class="text-red-500"></span>
+                </div>
+                <div class="mb-4 min-w-[200px] w-full">
+                    <label asp-for="HostelName" class="flex justify-between text-gray-700 text-sm font-semibold ps-2">
+                        <span>Hostel Name</span>
+                    </label>
+                    <input asp-for="HostelName" class="form-input w-full px-4 py-1 border rounded-br-xl rounded-tl-xl border-gray-300 border-l-2 border-t-2 text-gray-700 text-lg focus:ring-blue-500" value="@Model.HostelName" />
+                    <span asp-validation-for="HostelName" class="text-red-500"></span>
+                </div>
+                <div class="mb-4 min-w-[200px] w-full">
+                    <label asp-for="RoomNumber" class="flex justify-between text-gray-700 text-sm font-semibold ps-2">
+                        <span>Room Number</span>
+                    </label>
+                    <input asp-for="RoomNumber" class="form-input w-full px-4 py-1 border rounded-br-xl rounded-tl-xl border-gray-300 border-l-2 border-t-2 text-gray-700 text-lg focus:ring-blue-500" value="@Model.RoomNumber" />
+                    <span asp-validation-for="RoomNumber" class="text-red-500"></span>
+                </div>
+                <div class="mb-4 min-w-[200px] w-full">
+                    <label asp-for="DateOfBirth" class="flex justify-between text-gray-700 text-sm font-semibold ps-2">
+                        <span>Date Of Birth</span>
+                    </label>
+                    <input asp-for="DateOfBirth" class="form-input w-full px-4 py-1 border rounded-br-xl rounded-tl-xl border-gray-300 border-l-2 border-t-2 text-gray-700 text-lg focus:ring-blue-500" value="@Model.DateOfBirth" />
+                    <span asp-validation-for="DateOfBirth" class="text-red-500"></span>
+                </div>
+                <div class="sm:col-span-2">
+                    <div class="flex flex-col mb-5">
+                        <div class="flex flex-col w-full sm:!flex-row sm:gap-5">
+                            <label class="text-black">
+                                Select Gender
+                            </label>
+                            <div class="flex flex-row items-start gap-4">
+                                <div>
+                                    <input asp-for="Gender" id="male" class="accent-gray-700" type="radio" value="male" checked='@(Model.Gender == "male")'>
+                                    <label for="male" class="pl-1">Male</label>
+                                </div>
+                                <div>
+                                    <input asp-for="Gender" id="female" class="accent-gray-700" type="radio" value="female" checked='@(Model.Gender == "female")'>
+                                    <label for="female" class="pl-1">Female</label>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Gender" class="text-red-500"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <div class="mb-4 min-w-[200px] w-full">
+                        <label asp-for="Address" class="flex justify-between text-gray-700 text-sm font-semibold ps-2">
+                            <span>Address</span>
+                        </label>
+                        <textarea asp-for="Address" class="form-input resize-none w-full px-4 py-1 border rounded-br-2xl rounded-tl-2xl border-gray-300 border-l-2 border-t-2 text-gray-700 text-lg focus:ring-blue-500 resize-none">@Model.Address</textarea>
+                        <span asp-validation-for="Address" class="text-red-500"></span>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="bg-zinc-800 hover:bg-zink-700 focus:ring-zinc-600 text-white px-4 py-1 mx-1 rounded-tl-xl rounded-br-lg focus:ring-2 focus:ring-opacity-100 w-fit px-6">
+                Submit
+            </button>
+        </form>
+    </div>
+</div>

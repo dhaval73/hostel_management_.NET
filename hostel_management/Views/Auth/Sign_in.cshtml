@@ -1,0 +1,41 @@
+﻿@model hostel_management.Models.SignInModel
+
+
+@{
+    ViewData["Title"] = "Sign_in";
+    Layout = "_Layout";
+}
+
+<div class="container px-44">
+    <main class="flex flex-col items-center px-11 py-12 bg-zinc-50 max-md:px-5">
+        <section class="self-stretch px-3.5 py-2.5 mt-8 shadow-2xl bg-zinc-300 rounded-[50px_0px] max-md:max-w-fit">
+            <article class="flex max-w-fit max-md:flex-col bg-slate-900/10 max-md:gap-0 rounded-[50px_0px] overflow-hidden">
+                <div class="w-fit h-full max-md:ml-0"><img loading="lazy" class="object-cover h-full size-full inset-0 overflow-hidden" src="https://www.admissions.rku.ac.in/img/campus/rk-university-hostel-rajkot-2.jpg"></div>
+                <div class="h-full min-w-[320px] w-[50%]">
+                    <div class="w-full h-full">
+                        <div class="w-full flex flex-col items-center justify-center p-10">
+                            <div class="w-full text-3xl font-bold flex justify-center mb-10">Sign In</div>
+                            <form asp-action="Sign_in" method="post" class="w-full flex flex-col justify-center items-center">
+                                <div class="mb-4 min-w-[200px] w-full">
+                                    <label for="email" class="flex justify-between text-gray-700 text-sm font-semibold ps-2"><span>Email</span></label>
+                                    <input asp-for="Email" id="email" class="form-input w-full px-4 py-1 border rounded-br-2xl rounded-tl-2xl border-gray-300 border-l-2 border-t-2 text-gray-700 text-lg focus:ring-blue-500 undefined" placeholder="Enter your email">
+                                    <span asp-validation-for="Email" class="text-red-500"></span>
+                                </div>
+                                <div class="mb-4 min-w-[200px] w-full">
+                                    <label for="password" class="flex justify-between text-gray-700 text-sm font-semibold ps-2"><span>Password</span></label>
+                                    <input asp-for="Password" type="password" id="password" class="form-input w-full px-4 py-1 border rounded-br-2xl rounded-tl-2xl border-gray-300 border-l-2 border-t-2 text-gray-700 text-lg focus:ring-blue-500 undefined" placeholder="Enter your password">
+                                    <span asp-validation-for="Password" class="text-red-500"></span>
+                                </div>
+                                <div class="w-full flex justify-between text-blue-700 mb-5 px-1 cursor-pointer focus:cursor-auto">
+                                    <span>Forgot Password?</span>
+                                    <span onclick="location.href='@Url.Action("Sign_up", "Auth")'">Sign Up</span>
+                                </div>
+                                <button type="submit" class="bg-green-700 hover:bg-green-800 focus:ring-green-600 text-white px-4 py-1 mx-1 rounded-tl-xl rounded-br-lg focus:ring-2 focus:ring-opacity-100 w-fit w-[100px]">Sign In</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+</div>
